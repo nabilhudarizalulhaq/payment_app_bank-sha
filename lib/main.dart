@@ -1,3 +1,4 @@
+import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/screen/home_page.dart';
 import 'package:bank_sha/ui/screen/onboarding_page.dart';
 import 'package:bank_sha/ui/screen/profile_page.dart';
@@ -18,6 +19,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: lightBackgroundColor,
+        appBarTheme: AppBarTheme(
+          backgroundColor: lightBackgroundColor,
+          elevation: 0.0,
+          centerTitle: true,
+          iconTheme: IconThemeData(
+          color: blackColor,
+          ),
+          titleTextStyle: blackTextStyle.copyWith(
+            fontSize: 20,
+            fontWeight: semiBold,
+          ),
+        ),
+      ),
       routes: {
         '/': (context) => const Splashpage(),
         '/onboarding' :(contex) => const OnBoardingPage(),
