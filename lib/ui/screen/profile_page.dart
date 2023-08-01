@@ -8,7 +8,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: const Text(
           'My Profile',
@@ -75,39 +75,38 @@ class ProfilePage extends StatelessWidget {
                   height: 40,
                 ),
                 ProfileMenuItem(
-                  iconUrl: 'assets/ic_edit_profile.png', 
+                  iconUrl: 'assets/ic_edit_profile.png',
                   title: 'Edit Profile',
-                  onTap: (){
-                    Navigator.pushNamed(
-                    context,
-                    '/pin',
-                    );
+                  onTap: () async{
+                    if (await Navigator.pushNamed(context,'/pin') == true) {
+                      Navigator.pushNamed(context, '/profile-edit');
+                    }
                   },
                 ),
                 ProfileMenuItem(
-                  iconUrl: 'assets/ic_pin.png', 
+                  iconUrl: 'assets/ic_pin.png',
                   title: 'My PIN',
-                  onTap: (){},
+                  onTap: () {},
                 ),
                 ProfileMenuItem(
-                  iconUrl: 'assets/ic_wallet.png', 
+                  iconUrl: 'assets/ic_wallet.png',
                   title: 'Wallet Settings',
-                  onTap: (){},
+                  onTap: () {},
                 ),
                 ProfileMenuItem(
-                  iconUrl: 'assets/ic_reward.png', 
+                  iconUrl: 'assets/ic_reward.png',
                   title: 'My Rewards',
-                  onTap: (){},
+                  onTap: () {},
                 ),
                 ProfileMenuItem(
-                  iconUrl: 'assets/ic_help.png', 
+                  iconUrl: 'assets/ic_help.png',
                   title: 'Help Center',
-                  onTap: (){},
+                  onTap: () {},
                 ),
                 ProfileMenuItem(
-                  iconUrl: 'assets/ic_logout.png', 
+                  iconUrl: 'assets/ic_logout.png',
                   title: 'Log Out',
-                  onTap: (){},
+                  onTap: () {},
                 ),
               ],
             ),
@@ -117,7 +116,7 @@ class ProfilePage extends StatelessWidget {
           ),
           CustomTextButton(
             title: 'Report a Problem',
-            onPressed: (){},
+            onPressed: () {},
           ),
           const SizedBox(
             height: 50,
