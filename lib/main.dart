@@ -3,6 +3,7 @@ import 'package:bank_sha/ui/screen/home_page.dart';
 import 'package:bank_sha/ui/screen/onboarding_page.dart';
 import 'package:bank_sha/ui/screen/pin_page.dart';
 import 'package:bank_sha/ui/screen/profile_edit_page.dart';
+import 'package:bank_sha/ui/screen/profile_edit_pin_page.dart';
 import 'package:bank_sha/ui/screen/profile_page.dart';
 import 'package:bank_sha/ui/screen/sign_in_page.dart';
 import 'package:bank_sha/ui/screen/sign_up_page.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         '/profile' :(context) => const ProfilePage(),
         '/pin':(context) => const PinPage(),
         '/profile-edit' : (context) => const ProfileEditPage(),
+        '/profile-edit-pin':(context) => const ProfileEditPinPage(),
       },
     );
   }
