@@ -15,37 +15,40 @@ class HomeServiceItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: 70,
-          height: 70,
-          margin: const EdgeInsets.only(
-            bottom: 8,
-          ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(28),
-            color: whiteColor,
-          ),
-          child: Center(
-            child: Image.asset(
-              iconUrl,
-              width: 26,
-              height: 26,
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
+            width: 70,
+            height: 70,
+            margin: const EdgeInsets.only(
+              bottom: 8,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(28),
+              color: whiteColor,
+            ),
+            child: Center(
+              child: Image.asset(
+                iconUrl,
+                width: 26,
+                height: 26,
+              ),
             ),
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Text(
-          title,
-          style: blackTextStyle.copyWith(
-            fontSize: 14,
-            fontWeight: medium,
+          const SizedBox(
+            height: 8,
           ),
-        ),
-      ],
+          Text(
+            title,
+            style: blackTextStyle.copyWith(
+              fontSize: 14,
+              fontWeight: medium,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
