@@ -10,9 +10,7 @@ class TopUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Top Up'
-        ),
+        title: const Text('Top Up'),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(
@@ -78,20 +76,20 @@ class TopUpPage extends StatelessWidget {
             height: 14,
           ),
           const BankItem(
-            title: 'BANK BCA', 
+            title: 'BANK BCA',
             imageUrl: 'assets/img_bank_bca.png',
             isSelected: true,
           ),
           const BankItem(
-            title: 'Bank BNI', 
+            title: 'Bank BNI',
             imageUrl: 'assets/img_bank_bni.png',
           ),
           const BankItem(
-            title: 'Bank Mandiri', 
+            title: 'Bank Mandiri',
             imageUrl: 'assets/img_bank_mandiri.png',
           ),
           const BankItem(
-            title: 'Bank OCBC', 
+            title: 'Bank OCBC',
             imageUrl: 'assets/img_bank_ocbc.png',
           ),
           const SizedBox(
@@ -99,7 +97,9 @@ class TopUpPage extends StatelessWidget {
           ),
           CustomFilledButton(
             title: 'Continue',
-            onPressed: (){},
+            onPressed: () {
+              Navigator.pushNamed(context, '/topup-amount');
+            },
           ),
           const SizedBox(
             height: 57,
@@ -107,5 +107,5 @@ class TopUpPage extends StatelessWidget {
         ],
       ),
     );
-}
+  }
 }
