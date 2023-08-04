@@ -58,32 +58,34 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
           const SizedBox(
             height: 67,
           ),
-          SizedBox(
-            width: 200,
-            child: TextFormField(
-              controller: amountController,
-              cursorColor: greyColor,
-              enabled: false,
-              style: whiteTextStyle.copyWith(
-                fontSize: 36,
-                fontWeight: medium,
-              ),
-              decoration: InputDecoration(
-                prefixIcon: Text(
-                  'Rp.',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 36,
-                    fontWeight: medium,
-                  ),
+          Align(
+            child: SizedBox(
+              width: 200,
+              child: TextFormField(
+                controller: amountController,
+                cursorColor: greyColor,
+                enabled: false,
+                style: whiteTextStyle.copyWith(
+                  fontSize: 36,
+                  fontWeight: medium,
                 ),
-                disabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: greyColor,
+                decoration: InputDecoration(
+                  prefixIcon: Text(
+                    'Rp.',
+                    style: whiteTextStyle.copyWith(
+                      fontSize: 36,
+                      fontWeight: medium,
+                    ),
                   ),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: greyColor,
+                  disabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: greyColor,
+                    ),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: greyColor,
+                    ),
                   ),
                 ),
               ),
@@ -180,6 +182,28 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                 ),
               ),
             ],
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          CustomFilledButton(
+            title: 'Checkout Now',
+            onPressed: () async {
+              if (await Navigator.pushNamed(context, '/pin') == true) {
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/topup-succes', (route) => false);
+              }
+            },
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          CustomTextButton(
+            title: 'Terms & Conditions',
+            onPressed: (){},
+          ),
+          const SizedBox(
+            height: 40,
           ),
         ],
       ),
