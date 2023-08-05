@@ -1,3 +1,4 @@
+import 'package:bank_sha/shared/shared_methods.dart';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,10 @@ class PackageItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 155,
-      height: 165,
+      height: 165
+      
+      
+      ,
       padding: const EdgeInsets.symmetric(
         horizontal: 14,
         vertical: 22,
@@ -44,7 +48,7 @@ class PackageItem extends StatelessWidget {
             height: 6,
           ),
           Text(
-            'Rp $price',
+            formatCurrency(price),
             style: greyTextStyle.copyWith(
               fontSize: 12,
             ),
