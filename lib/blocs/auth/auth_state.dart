@@ -2,7 +2,7 @@ part of 'auth_bloc.dart';
 
 abstract class AuthState extends Equatable {
   const AuthState();
-  @override
+ @override
   List<Object> get props => [];
 }
 
@@ -19,3 +19,12 @@ class AuthFailed extends AuthState {
 }
 
 class AuthCheckEmailSuccess extends AuthState {}
+
+// class AuthSuccess extends AuthState {
+//   final UserModel data;
+//   const AuthSuccess(this.data);
+
+//   @override
+//   List<Object> get props => [data];
+// }
+
