@@ -50,5 +50,5 @@ class AuthService {
       print(e);
       rethrow;
     }
-  }
+  } 
 }

@@ -134,10 +134,12 @@ class _SignUpSetProfilePageState extends State<SignUpSetProfilePage> {
                           builder: (context) => SignUpSetKtpPage(
                             data: widget.data.copyWhith(
                               pin: pinController.text,
-                              profilePicture: selectedImage == null ? 
-                              null :'data:image/png;base64${base64Encode(
-                                File(selectedImage!.path).readAsBytesSync(),
-                              )}',
+                              profilePicture: selectedImage == null
+                                  ? null
+                                  : 'data:image/png;base64,${base64Encode(
+                                      File(selectedImage!.path)
+                                          .readAsBytesSync(),
+                                    )}',
                             ),
                           ),
                         ),

@@ -41,7 +41,7 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
           }
           if (state is AuthSuccess) {
             Navigator.pushNamedAndRemoveUntil(
-                context, '/home', (route) => false);
+                context, '/sign-up-success', (route) => false);
           }
         },
         builder: (context, state) {
@@ -140,13 +140,10 @@ class _SignUpSetKtpPageState extends State<SignUpSetKtpPage> {
                           context.read<AuthBloc>().add(
                                 AuthRegister(
                                   widget.data.copyWhith(
-                                    ktp: selectedImage == null
-                                        ? null
-                                        : 'data:image/png;base64${
-                                          base64Encode(
-                                            File(selectedImage!.path)
-                                                .readAsBytesSync(),
-                                          )}',
+                                  ktp : selectedImage == null ? 
+                                        null :'data:image/png;base64,${base64Encode(
+                                        File(selectedImage!.path).readAsBytesSync(),
+                                    )}',
                                   ),
                                 ),
                               );
