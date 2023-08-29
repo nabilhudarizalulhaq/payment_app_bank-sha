@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => AuthBloc(),),],
+        BlocProvider(create: (context) => AuthBloc()..add(AuthGetCurrentUser(),),),],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         routes: {
-          '/': (context) => const Splashpage(),
+          '/': (context) => const SplashPage(),
           '/onboarding': (contex) => const OnBoardingPage(),
           '/sign-in': (context) => const SignInPage(),
           '/sign-up': (context) => const SignUpPage(),
